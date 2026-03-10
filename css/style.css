@@ -1,0 +1,158 @@
+body{
+    font-family : Arial, sans-serif;
+    margin: 20px;
+    background-color: #d4c7c7;
+}
+
+footer{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #000000;
+}
+
+h1{
+    text-align: center;
+}
+
+#tabela-periodica{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(18, 90px);
+    gap: 10px;
+}
+
+#painel-elemento{
+    margin-top: 40px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 400px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.elemento{
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+}
+
+.numero{
+    font-size: 12px;
+}
+
+.simbolo{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nome{
+    font-size: 12px;
+}
+
+.elemento:hover{
+    background-color: #53c6e9;
+    transform: scale(1.05);
+}
+
+.ametal{ background-color: #94ee94; }
+.gás-nobre{ background-color: #b5d9ff; }
+.metal-alcalino{ background-color: #FFB5B5; }
+.metal-alcalino-terroso{ background-color: #FFD9B5; }
+.metal-de-transição{ background-color: #FFFFB5; }
+.semimetal{ background-color: #c0dbc0; }
+.metal-pós-transição{ background-color: #d9b5ff; }
+.halogênio{ background-color: #ffb5ff; }
+.lantanídeo{ background-color: #f7ef8a; }
+.actinídeo{ background-color: #dff36e; }
+
+.elemento.selecionado{
+    border: 3px solid #333;
+    transform: scale(1.1);
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+#visualizacao-atomo{
+    width: 350px;
+    height: 350px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#info-texto{
+    width: 45%;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.nucleo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+}
+
+.proton, .neutron {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    box-shadow: inset -1px -2px 2px rgba(0,0,0,0.4);
+}
+
+.proton { background-color: #FF4136; } 
+.neutron { background-color: #AAAAAA; } 
+
+.orbita {
+    position: absolute;
+    border: 1px dashed #ccc;
+    border-radius: 50%;
+    animation: girar linear infinite;
+    z-index: 1;
+}
+
+.eletron {
+    width: 8px;
+    height: 8px;
+    background-color: #0074D9; 
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 0 4px #0074D9;
+}
+
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#info-texto{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+#info-texto h2{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+#info-texto p{
+    margin: 5px 0;
+}
+
+#visualizacao-atomo{
+    margin-bottom: 20px;
+}
